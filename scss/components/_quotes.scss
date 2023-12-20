@@ -1,0 +1,50 @@
+.quotes {
+    --spacer: 2rem;
+
+    li {
+        &:nth-child(2) {
+            transform: translateY(2rem);
+        }
+
+        &:nth-child(3) {
+            transform: translateY(4rem);
+        }
+    }
+
+    blockquote {
+        color: var(--clr-neutral-200);
+        background-color: var(--clr-primary-700);
+        text-align: left;
+        border-radius: var(--br);
+        max-width: 25rem;
+        height: 100%;
+        margin: 0 auto;
+        padding: var(--spacer);
+    }
+
+    .buyer {
+        display: flex;
+    }
+
+    img {
+        width: 3rem;
+        border-radius: 50%;
+        margin-right: var(--spacer); 
+        // @media (min-width: 50em) {
+        //     
+        // }
+        
+    }
+
+    .name {
+        font-weight: 800;
+    }
+
+    .status {
+        color: var(--clr-primary-300);
+    }
+
+    .quote {
+        margin-top: var(--spacer);
+    }
+}

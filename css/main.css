@@ -1,0 +1,249 @@
+:root {
+  --clr-primary-300: hsl(333, 80%, 67%);
+  --clr-primary-700: hsl(300, 43%, 22%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(300, 24%, 96%);
+  --clr-neutral-300: hsl(303, 10%, 53%);
+  --ff-primary: "Spartan", sans-serif;
+  --fs-400: 0.8125rem;
+  --fs-500: 0.9375rem;
+  --fs-900: 2rem;
+  --br: .5rem;
+}
+@media (min-width: 50em) {
+  :root {
+    --fs-900: 3rem;
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-400);
+  text-align: center;
+  padding-top: 5rem;
+  background-image: url(../images/bg-pattern-top-desktop.svg), url(../images/bg-pattern-bottom-desktop.svg);
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
+  background-size: max(50%, 400px);
+}
+@media (min-width: 50em) {
+  body {
+    padding-top: 7.5rem;
+  }
+}
+
+h1 {
+  color: var(--clr-primary-700);
+  font-size: var(--fs-900);
+  font-weight: 800;
+  max-width: 15ch;
+  margin-bottom: 0.5em;
+  line-height: 1;
+}
+@media (max-width: 50em) {
+  h1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+  }
+}
+
+.lead {
+  font-size: var(--fs-500);
+  color: var(--clr-neutral-300);
+}
+
+main {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 50em) {
+  main {
+    grid-template-columns: 1fr 1.5fr;
+    text-align: left;
+  }
+  .intro {
+    grid-column: 1/2;
+    max-width: 60ch;
+  }
+  .ratings {
+    grid-column: 2/3;
+    align-self: center;
+  }
+  .quotes {
+    grid-column: 1/-1;
+  }
+  ul.quotes {
+    margin-top: 2rem;
+  }
+}
+.container {
+  max-width: 70rem;
+  padding: 0 2em;
+  margin: 0 auto;
+}
+
+.flow-content > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.split {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+}
+@media (min-width: 50em) {
+  .split {
+    flex-direction: row;
+  }
+}
+
+.a-center {
+  align-items: center;
+}
+
+.quotes {
+  --spacer: 2rem;
+}
+.quotes li:nth-child(2) {
+  transform: translateY(2rem);
+}
+.quotes li:nth-child(3) {
+  transform: translateY(4rem);
+}
+.quotes blockquote {
+  color: var(--clr-neutral-200);
+  background-color: var(--clr-primary-700);
+  text-align: left;
+  border-radius: var(--br);
+  max-width: 25rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: var(--spacer);
+}
+.quotes .buyer {
+  display: flex;
+}
+.quotes img {
+  width: 3rem;
+  border-radius: 50%;
+  margin-right: var(--spacer);
+}
+.quotes .name {
+  font-weight: 800;
+}
+.quotes .status {
+  color: var(--clr-primary-300);
+}
+.quotes .quote {
+  margin-top: var(--spacer);
+}
+
+.ratings li {
+  color: var(--clr-primary-700);
+  font-weight: 800;
+  background-color: var(--clr-neutral-200);
+  max-width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.75rem 2rem;
+  border-radius: var(--br);
+}
+@media (min-width: 50em) {
+  .ratings li {
+    display: flex;
+    align-items: center;
+  }
+  .ratings li::before {
+    margin: 0 1.5rem 0 0;
+  }
+  .ratings li:first-of-type {
+    transform: translateX(-3rem);
+  }
+  .ratings li:last-of-type {
+    transform: translateX(3rem);
+  }
+}
+.ratings img {
+  display: inline-block;
+  margin: 0 0.125rem;
+}
+.ratings .stars {
+  margin-right: 0.25rem;
+}
+
+/*# sourceMappingURL=main.css.map */

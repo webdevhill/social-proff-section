@@ -1,0 +1,67 @@
+body {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-400);
+    text-align: center;
+    padding-top: 5rem;
+    background-image: url(../images/bg-pattern-top-desktop.svg),
+    url(../images/bg-pattern-bottom-desktop.svg);
+    background-position: top left , bottom  right;
+    background-repeat: no-repeat;
+    background-size: max(50%, 400px);
+    @media (min-width: 50em) {
+        padding-top: 7.5rem;
+    }
+}
+
+h1 {
+    color: var(--clr-primary-700);
+    font-size: var(--fs-900);
+    font-weight: 800;
+    max-width: 15ch;
+    margin-bottom: .5em;
+    line-height: 1;
+
+    @media (max-width: 50em) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1em;
+    }
+}
+
+.lead {
+    font-size: var(--fs-500);
+    color: var(--clr-neutral-300);
+}
+
+// Desktop Layout
+
+main {
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 50em) {
+    main {
+        grid-template-columns: 1fr 1.5fr;
+        text-align: left;
+    }
+    
+    .intro {
+        grid-column: 1 / 2;
+        max-width: 60ch;
+    }
+
+    .ratings {
+        grid-column: 2 / 3;
+        align-self: center;
+    }
+
+    .quotes {
+        grid-column: 1 / -1;
+    }
+
+    ul.quotes {
+        margin-top: 2rem;
+    }
+}
+
